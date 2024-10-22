@@ -22,15 +22,15 @@ const Footer = () => {
                     <div className="footer-top-right">
                         <h2>Connect</h2>
                         <div className='logos'>
-                            <img src={github_icon} alt="" />
-                            <img src={linkedin_icon} alt="" />
-                            <img src={portfolio_icon} alt="" />
+                            <a href="https://github.com/kartikprakash00/TileVerse-React" target='_blank'><img src={github_icon} alt="" /></a>
+                            <a href="https://www.linkedin.com/in/kartikprakash1" target='_blank'><img src={linkedin_icon} alt="" /></a>
+                            <a href="https://kartikprakash.vercel.app" target='_blank'><img src={portfolio_icon} alt="" /></a>
                         </div>
                     </div>
                 </div>
                 <hr className='line' />
                 <div className="footer-bottom">
-                    <p>© Made by <span onClick={() => window.location.href = ''}>Kartik Prakash</span></p>
+                    <p>© Made by <span onClick={() => window.open('https://kartikprakash.vercel.app', '_blank')}>Kartik Prakash</span></p>
                 </div>
             </div>
         </div>
