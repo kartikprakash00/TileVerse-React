@@ -1,0 +1,94 @@
+.mode {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.mode h1 {
+    background: linear-gradient(to right, #4695DD, rgb(1, 4, 185), #4695DD);
+    font-family: 'Sixtyfour Convergence';
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 40px;
+    color: transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.choose {
+    display: flex;
+    gap: 50px;
+}
+
+.choose img {
+    height: 500px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.choose button {
+    background: transparent;
+    border: 2px solid #4695DD;
+    color: #4695DD;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.2s;
+}
+
+.choose button:hover,
+.choose button:focus {
+    background: linear-gradient(to right, #4695DD, rgb(1, 4, 185), #4695DD);
+    color: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    outline: none;
+}
+
+@media(max-width: 768px) {
+
+    .mode{
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .mode h1 {
+        font-size: 25px;
+        background: linear-gradient(to right, #4946dd, rgb(1, 4, 185), #4946dd);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+
+    .hrline{
+        margin-bottom: 100px;
+    }
+
+    .choose{
+        flex-direction: column;
+    }
+
+    .choose img{
+        display: none;
+    }
+
+    .choose button{
+        border-radius: 50px;
+        width: 200px;
+        color: #4946dd;
+        border-color: #4946dd;
+        backdrop-filter: none;
+    }
+}

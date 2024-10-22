@@ -1,0 +1,146 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    border-top: 5px ridge #4695DD;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    height: auto;
+    margin-top: 20px;
+}
+
+.footer-box {
+    padding: 20px 50px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-top-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo h2 {
+    font-family: 'Sixtyfour Convergence';
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.footer-para {
+    margin-top: 20px;
+    font-size: 15px;
+    width: 50%;
+}
+
+.footer-top-right {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    margin-right: 50px;
+    gap: 30px;
+}
+
+.footer-top-right h2 {
+    font-family: 'Sixtyfour Convergence';
+    margin-bottom: 0px;
+    font-size: 30px;
+    padding: 0;
+    font-weight: 600;
+}
+
+.logos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.logos img {
+    width: 30px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.logos img:hover {
+    transform: scale(1.5);
+    transition: .3s;
+}
+
+.line {
+    width: 70vw;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-bottom p {
+    font-size: 18px;
+}
+
+.footer-bottom span {
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media(max-width: 768px) {
+    .footer {
+        margin: 0;
+        padding: 0;
+        backdrop-filter: none;
+        background-color: #ffffffb1;
+    }
+
+    .footer-box {
+        padding: 10px;
+    }
+
+    .footer-top {
+        flex-direction: column-reverse;
+        align-items: start;
+        gap: 30px;
+        max-width: 100%;
+    }
+
+    .footer-logo h2 {
+        font-size: 20px;
+    }
+
+    .footer-para {
+        width: 100%;
+    }
+
+    .footer-top-right {
+        align-items: start;
+        margin: 20px 0px;
+        gap: 20px;
+    }
+
+    .footer-top-right h2 {
+        font-size: 20px;
+    }
+
+    .logos {
+        gap: 15px;
+    }
+
+    .logos img {
+        width: 25px;
+    }
+
+    .footer-bottom p {
+        font-size: 15px;
+    }
+}

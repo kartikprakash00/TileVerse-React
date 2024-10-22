@@ -1,0 +1,75 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-content {
+    display: flex;
+    margin: 200px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.title h1 {
+    font-family: 'Sixtyfour Convergence';
+    background: linear-gradient(to right, #4695DD, #0104b9, #4695DD);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 45px;
+    color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.start button {
+    width: 300px;
+    height: 80px;
+    background: transparent;
+    border: 2px solid #4695DD;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 2em;
+    color: #4695DD;
+    font-weight: 500;
+    transition: .5s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.start button:hover,
+.start button:focus {
+    background: linear-gradient(to right, #0285ff, #0104b9, #0084ff);
+    color: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    outline: none;
+}
+
+@media(max-width: 768px) {
+
+    .home-content {
+        margin: 150px;
+    }
+
+    .title h1 {
+        background: linear-gradient(to right, #4946dd, #0104b9, #4946dd);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 30px;
+        text-align: center;
+        line-height: 40px;
+    }
+
+    .start button {
+        width: 200px;
+        height: 70px;
+        font-size: 1.3em;
+    }
+}

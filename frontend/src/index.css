@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background: url(./assets/bgimg.jpg);
+    background-size: cover;
+    font-family: 'Outfit', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+hr {
+    border: none;
+    border-top: 3px solid #92b7da;
+    width: 60%;
+    margin: 20px auto;
+}
