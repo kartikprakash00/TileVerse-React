@@ -14,13 +14,15 @@ const Game2048 = () => {
     ]);
     const [score, setScore] = useState(0);
     const [gameOver, setGameOver] = useState(false);
+    const [touchStart, setTouchStart] = useState({ x: 0, y: 0 });
+    const [touchEnd, setTouchEnd] = useState({ x: 0, y: 0 });
     const rows = 4;
     const columns = 4;
 
-    let touchStartX = 0;
-    let touchStartY = 0;
-    let touchEndX = 0;
-    let touchEndY = 0;
+    // let touchStartX = 0;
+    // let touchStartY = 0;
+    // let touchEndX = 0;
+    // let touchEndY = 0;
 
     const updateHighScore = async (score) => {
         try {
@@ -45,38 +47,86 @@ const Game2048 = () => {
         }
     }
 
-    const handleTouchStart = (e) => {
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
-    }
+    // const handleTouchStart = (e) => {
+    //     touchStartX = e.touches[0].clientX;
+    //     touchStartY = e.touches[0].clientY;
+    // }
 
-    const handleTouchMove = (e) => {
-        touchEndX = e.touches[0].clientX;
-        touchEndY = e.touches[0].clientY;
-    }
+    // const handleTouchMove = (e) => {
+    //     touchEndX = e.touches[0].clientX;
+    //     touchEndY = e.touches[0].clientY;
+    // }
 
-    const handleTouchEnd = () => {
-        const deltaX = touchEndX - touchStartX;
-        const deltaY = touchEndY - touchStartY;
+    // const handleTouchEnd = () => {
+    //     const deltaX = touchEndX - touchStartX;
+    //     const deltaY = touchEndY - touchStartY;
 
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-            if (deltaX > 50) {
-                slideRight();
-            } else if (deltaX < -50) {
-                slideLeft();
+    //     if (Math.abs(deltaX) > Math.abs(deltaY)) {
+    //         if (deltaX > 50) {
+    //             slideRight();
+    //         } else if (deltaX < -50) {
+    //             slideLeft();
+    //         }
+    //     } else {
+    //         if (deltaY > 50) {
+    //             slideDown()
+    //         } else if (deltaY < -50) {
+    //             slideUp();
+    //         }
+    //     }
+
+    //     if (!canMove()) {
+    //         setGameOver(true)
+    //     }
+    // }
+
+    useEffect(() => {
+        const handleSwipe = () => {
+            const dx = touchEnd.x - touchStart.x;
+            const dy = touchEnd.y - touchStart.y;
+
+            if (Math.abs(dx) > Math.abs(dy)) {
+                if (dx > 0) {
+                    slideRight();
+                } else {
+                    slideLeft();
+                }
+            } else {
+                if (dy > 0) {
+                    slideDown();
+                } else {
+                    slideUp();
+                }
             }
-        } else {
-            if (deltaY > 50) {
-                slideDown()
-            } else if (deltaY < -50) {
-                slideUp();
+
+            if (!canMove()) {
+                setGameOver(true);
             }
         }
 
-        if (!canMove()) {
-            setGameOver(true)
+        const handleTouchStart = (e) => {
+            setTouchStart({ x: e.touches[0].clientX, y: e.touches[0].clientY })
         }
-    }
+
+        const handleTouchMove = (e) => {
+            setTouchEnd({ x: e.touches[0].clientX, y: e.touches[0].clientY })
+        }
+
+        const handleTouchEnd = () => {
+            handleSwipe();
+        }
+
+        window.addEventListener("touchstart", handleTouchStart);
+        window.addEventListener("touchmove", handleTouchMove);
+        window.addEventListener("touchend", handleTouchEnd);
+
+        return () => {
+            window.removeEventListener("touchstart", handleTouchStart);
+            window.removeEventListener("touchmove", handleTouchMove);
+            window.removeEventListener("touchend", handleTouchEnd);
+        }
+
+    }, [touchStart, touchEnd, board, gameOver])
 
     useEffect(() => {
         setGame();
@@ -116,15 +166,15 @@ const Game2048 = () => {
         }
 
         window.addEventListener("keyup", handleKeyPress);
-        window.addEventListener("touchstart", handleTouchStart);
-        window.addEventListener("touchmove", handleTouchMove);
-        window.addEventListener("touchend", handleTouchEnd);
+        // window.addEventListener("touchstart", handleTouchStart);
+        // window.addEventListener("touchmove", handleTouchMove);
+        // window.addEventListener("touchend", handleTouchEnd);
 
         return () => {
             window.removeEventListener("keyup", handleKeyPress);
-            window.removeEventListener("touchstart", handleTouchStart);
-            window.removeEventListener("touchmove", handleTouchMove);
-            window.removeEventListener("touchend", handleTouchEnd);
+            // window.removeEventListener("touchstart", handleTouchStart);
+            // window.removeEventListener("touchmove", handleTouchMove);
+            // window.removeEventListener("touchend", handleTouchEnd);
         }
     }, [board, gameOver]);
 
