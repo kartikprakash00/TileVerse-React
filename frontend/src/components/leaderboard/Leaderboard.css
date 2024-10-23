@@ -120,7 +120,8 @@
 @media(max-width: 768px) {
 
     .leader-box {
-        margin-top: 100px;
+        margin-top: 20px;
+        height: 90%;
     }
 
     .leader-content {
@@ -129,6 +130,10 @@
 
     .leader-content h1 {
         font-size: 25px;
+    }
+
+    .leader-content button {
+        margin-top: 10px;
     }
 
     .leader-games {
@@ -149,10 +154,11 @@
     }
 
     .leader-game ul {
-        margin-bottom: 0;
+        margin: 0;
     }
 
     .leader-game ul li {
         margin-left: 70px;
+        margin-bottom: 2px;
     }
 }

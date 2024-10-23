@@ -87,6 +87,11 @@
 }
 
 @media(max-width:768px) {
+
+    .instruction-Overlay {
+        margin-top: 20px;
+    }
+
     .instruction-content {
         width: 95%;
     }
