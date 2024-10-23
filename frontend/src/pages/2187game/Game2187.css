@@ -129,7 +129,12 @@ h2 {
 }
 
 .overlay-content h1 {
-    font-size: 70px;
+    font-family: 'Sixtyfour Convergence';
+    background: linear-gradient(to right, #4695DD, #0104b9, #4695DD);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 40px;
     margin-bottom: 10px;
 }
 
@@ -172,6 +177,11 @@ hr {
 }
 
 @media(max-width:768px) {
+
+    .game {
+        margin-bottom: 0;
+    }
+
     .game .game-2187 {
         background: linear-gradient(to right, #0285ff, #0104b9, #0285ff);
         background-clip: text;
@@ -199,6 +209,28 @@ hr {
         height: 60px;
         font-size: 20px;
         line-height: 60px;
+    }
+
+    .overlay {
+        margin-top: 40px;
+    }
+
+    .overlay-content h1 {
+        background: linear-gradient(to right, #4695DD, #0104b9, #4695DD);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        font-size: 25px;
+    }
+
+    .overlay-content h2 {
+        font-size: 25px;
+        margin-bottom: 50px;
+    }
+
+    .overlay-content button{
+        width: 100%;
     }
 
 }
