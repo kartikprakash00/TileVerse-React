@@ -14,10 +14,12 @@ const Navbar = () => {
 
     const openMenu = () => {
         menuRef.current.style.right = "0";
+        menuRef.current.style.display = "flex"
     }
 
     const closeMenu = () => {
         menuRef.current.style.right = "-300px";
+        menuRef.current.style.display = "none"
     }
 
     const logout = () => {

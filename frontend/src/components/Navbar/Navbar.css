@@ -136,6 +136,7 @@
     }
 
     .nav-right {
+        display: none;
         position: fixed;
         flex-direction: column;
         align-items: start;
@@ -146,7 +147,7 @@
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         width: 200px;
-        height: 150vh;
+        height: 100vh;
         z-index: 100;
         transition: right 0.5s;
         right: -300px;
