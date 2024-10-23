@@ -218,15 +218,15 @@ hr {
     }
 
     #board {
-        width: 320px;
-        height: 320px;
+        width: 300px;
+        height: 300px;
     }
 
     .tile {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
         font-size: 20px;
-        line-height: 60px;
+        line-height: 55px;
     }
 
     .overlay {
