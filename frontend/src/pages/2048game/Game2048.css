@@ -196,6 +196,7 @@ hr {
 @media(max-width:768px) {
 
     .game {
+        margin-top: 20px;
         margin-bottom: 0;
     }
 
