@@ -181,8 +181,8 @@ hr {
     .game {
         margin-top: 20px;
         margin-bottom: 105px;
-        overflow: hidden;
         height: 100%;
+        overflow-y: hidden;
     }
 
     .game .game-2187 {
