@@ -200,6 +200,8 @@ hr {
         margin-bottom: 105px;
         height: 100%;
         overflow-y: hidden;
+        user-select: none;
+        -webkit-user-select: none;
     }
 
     .game .game-2048 {
