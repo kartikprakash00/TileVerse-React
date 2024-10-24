@@ -8,7 +8,6 @@ body {
     background: url(./assets/bgimg.jpg);
     background-size: cover;
     font-family: 'Outfit', Tahoma, Geneva, Verdana, sans-serif;
-    overflow-y: hidden;
 }
 
 hr {
@@ -16,4 +15,10 @@ hr {
     border-top: 3px solid #92b7da;
     width: 60%;
     margin: 20px auto;
+}
+
+@media(max-width:768px) {
+    body {
+        overscroll-behavior: none;
+    }
 }
