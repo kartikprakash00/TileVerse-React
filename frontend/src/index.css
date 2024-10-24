@@ -18,6 +18,8 @@ hr {
 }
 
 @media(max-width:768px) {
+
+    html,
     body {
         overscroll-behavior: none;
     }
