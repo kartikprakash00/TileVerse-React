@@ -179,8 +179,8 @@ hr {
 @media(max-width:768px) {
 
     html .game {
-        margin-top: 20px;
-        margin-bottom: 105px;
+        margin-top: 60px;
+        /* margin-bottom: 105px; */
         height: 100%;
         overflow: hidden;
         user-select: none;
