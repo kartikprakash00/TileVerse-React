@@ -21,13 +21,17 @@ const Navbar = () => {
     }, [token])
 
     const openMenu = () => {
-        menuRef.current.style.right = "0";
-        // menuRef.current.style.display = "flex"
+        setTimeout(() => {
+            menuRef.current.style.right = "0";
+        }, 100)
+        menuRef.current.style.display = "flex"
     }
 
     const closeMenu = () => {
         menuRef.current.style.right = "-300px";
-        // menuRef.current.style.display = "none"
+        setTimeout(() => {
+            menuRef.current.style.display = "none"
+        }, 500)
     }
 
     const login = () => {
