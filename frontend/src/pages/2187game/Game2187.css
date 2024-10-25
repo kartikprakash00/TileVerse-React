@@ -178,11 +178,11 @@ hr {
 
 @media(max-width:768px) {
 
-    .game {
+    html .game {
         margin-top: 20px;
         margin-bottom: 105px;
         height: 100%;
-        overflow-y: hidden;
+        overflow: hidden;
         user-select: none;
         -webkit-user-select: none;
     }
