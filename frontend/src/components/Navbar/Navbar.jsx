@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 import { GameContext } from '../../context/GameContext'
@@ -11,21 +11,36 @@ const Navbar = () => {
 
     const { navigate, token, setToken } = useContext(GameContext);
     const menuRef = useRef();
+    const [userName, setUserName] = useState('');
+
+    useEffect(() => {
+        const storedName = localStorage.getItem('userName');
+        if (token && storedName) {
+            setUserName(storedName);
+        }
+    }, [token])
 
     const openMenu = () => {
         menuRef.current.style.right = "0";
-        menuRef.current.style.display = "flex"
+        // menuRef.current.style.display = "flex"
     }
 
     const closeMenu = () => {
         menuRef.current.style.right = "-300px";
-        menuRef.current.style.display = "none"
+        // menuRef.current.style.display = "none"
+    }
+
+    const login = () => {
+        navigate('/login')
+        closeMenu();
     }
 
     const logout = () => {
         localStorage.removeItem('token')
         localStorage.removeItem('userId')
+        localStorage.removeItem('userName')
         setToken('')
+        setUserName('')
         navigate('/login')
     }
 
@@ -40,11 +55,11 @@ const Navbar = () => {
                 <div ref={menuRef} className='nav-right'>
                     <ul className='nav-list'>
                         <img onClick={closeMenu} className='nav-mob-close' src={menu_close} alt="" />
-                        <NavLink to='/' className='nav-link'><li>Home</li></NavLink>
-                        <li><a onClick={() => document.getElementById("instructionOverlay").style.display = "flex"}>How to Play</a></li>
-                        <li><a onClick={() => document.getElementById('leaderboardOverlay').style.display = 'flex'}>Leaderboard</a></li>
+                        <NavLink to='/' className='nav-link'><li onClick={closeMenu}>Home</li></NavLink>
+                        <li onClick={closeMenu}><a onClick={() => document.getElementById("instructionOverlay").style.display = "flex"}>How to Play</a></li>
+                        <li onClick={closeMenu}><a onClick={() => document.getElementById('leaderboardOverlay').style.display = 'flex'}>Leaderboard</a></li>
                     </ul>
-                    <button onClick={() => token ? logout() : navigate('/login')} className='nav-button'>{token ? 'Logout' : 'Login'}</button>
+                    <button onClick={() => token ? logout() : login()} className='nav-button'>{token ? `Logout (${userName})` : 'Login'}</button>
                 </div>
             </div>
             <div className="instruction-container">

@@ -28,6 +28,8 @@ const Login = () => {
                     setToken(response.data.token)
                     localStorage.setItem('token', response.data.token)
                     localStorage.setItem('userId', response.data.userId);
+                    localStorage.setItem('userName', response.data.userName);
+                    setName(response.data.userName);
                 }
                 else {
                     toast.error(response.data.message)
@@ -42,6 +44,7 @@ const Login = () => {
                     const userId = response.data.userId;
                     console.log('Logged in successfully, userId:', userId);
                     localStorage.setItem('userId', userId);
+                    localStorage.setItem('userName', response.data.userName);
                 }
                 else {
                     toast.error(response.data.message)

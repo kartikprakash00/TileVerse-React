@@ -69,14 +69,14 @@
 }
 
 .nav-button {
-    width: 130px;
-    height: 50px;
+    width: 220px;
+    height: 60px;
     background: transparent;
     border: 2px solid #4695DD;
     outline: none;
     border-radius: 40px;
     cursor: pointer;
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: #4695DD;
     font-weight: 500;
     margin-left: 40px;
@@ -136,7 +136,7 @@
     }
 
     .nav-right {
-        display: none;
+        /* display: none; */
         position: fixed;
         flex-direction: column;
         align-items: start;
@@ -164,5 +164,8 @@
 
     .nav-button {
         margin-left: 0;
+        font-size: 1em;
+        width: 150px;
+        height: 50px;
     }
 }
