@@ -144,11 +144,9 @@
         padding: 30px;
         gap: 30px;
         background: #ffffff;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
         width: 200px;
         height: 110vh;
-        z-index: 100;
+        z-index: 2;
         transition: right 0.5s;
         right: -300px;
     }
