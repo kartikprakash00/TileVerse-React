@@ -28,10 +28,12 @@ const Navbar = () => {
     }
 
     const closeMenu = () => {
-        menuRef.current.style.right = "-300px";
-        setTimeout(() => {
-            menuRef.current.style.display = "none"
-        }, 500)
+        if(window.matchMedia("(max-width: 768px").matches){
+            menuRef.current.style.right = "-300px";
+            setTimeout(() => {
+                menuRef.current.style.display = "none"
+            }, 500)
+        }
     }
 
     const login = () => {
